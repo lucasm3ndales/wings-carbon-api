@@ -9,6 +9,4 @@ export class UserRepository extends Repository<UserEntity> {
     constructor(@InjectRepository(UserEntity) repository: Repository<UserEntity>) {
         super(repository.target, repository.manager, repository.queryRunner);
     }
-
-    
 }
