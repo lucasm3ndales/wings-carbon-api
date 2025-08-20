@@ -4,6 +4,8 @@ import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { INestApplication } from '@nestjs/common';
 import { I18nValidationPipe } from 'nestjs-i18n';
+import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
+import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 
 
 function setupSwagger(app: INestApplication): void {
@@ -29,6 +31,14 @@ function setupValidationPipe(app: INestApplication): void {
   );
 }
 
+function setupWinstonLogger(app: INestApplication): void {
+    app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
+}
+
+function setupInterceptors(app: INestApplication): void {
+  app.useGlobalInterceptors(new LoggingInterceptor());
+}
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
@@ -39,6 +49,8 @@ async function bootstrap() {
 
   setupSwagger(app);
   setupValidationPipe(app);
+  setupWinstonLogger(app);
+  setupInterceptors(app);
 
   await app.listen(port);
   console.log(`🚀 Application is running on: http://localhost:${port}`);

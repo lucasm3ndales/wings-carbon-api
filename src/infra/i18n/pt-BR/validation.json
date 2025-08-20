@@ -1,0 +1,8 @@
+{
+  "IS_NOT_EMPTY": "O campo {property} não pode estar vazio.",
+  "IS_STRING": "O campo {property} deve ser um texto.",
+  "LENGTH": "O campo {property} deve ter entre {constraints.0} e {constraints.1} caracteres.",
+  "COUNTRY_LENGTH": "O país deve ser um código ISO 3166-1 alpha-2 de 2 caracteres.",
+  "IS_EMAIL": "O campo {property} deve ser um e-mail válido.",
+  "IS_PHONE_NUMBER": "O campo {property} deve ser um número de telefone válido."
+}

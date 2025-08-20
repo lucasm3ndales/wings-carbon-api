@@ -1,0 +1,8 @@
+{
+  "IS_NOT_EMPTY": "The {property} field cannot be empty.",
+  "IS_STRING": "The {property} field must be a string.",
+  "LENGTH": "The {property} field must be between {constraints.0} and {constraints.1} characters long.",
+  "COUNTRY_LENGTH": "The country must be a 2-character ISO 3166-1 alpha-2 code.",
+  "IS_EMAIL": "Please enter a valid email address.",
+  "IS_PHONE_NUMBER": "The {property} must be a valid phone number."
+}
